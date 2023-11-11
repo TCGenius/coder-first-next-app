@@ -6,4 +6,5 @@
   display: -webkit-box; 
   -webkit-box-orient: vertical; 
   -webkit-line-clamp: 2
+  /*Necesario para acortar el nombre del producto en 2 líneas*/
 }

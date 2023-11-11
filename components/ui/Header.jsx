@@ -9,7 +9,7 @@ export default function Header() {
       <div className='container flex justify-between items-center p-4 m-auto'>
         <div className='flex gap-4 items-center text-black'>
           <Menu />
-          <span className='text-2xl font-bold'><span className='text-blue-700'>C</span>apellari</span>
+          <Link className='text-2xl font-bold' href='/products/all'><span className='text-blue-700'>C</span>apellari</Link>
         </div>
         <div className='flex flex-row items-center justify-center gap-4'>
           <Tooltip content='Iniciar Sesión'>
@@ -17,8 +17,8 @@ export default function Header() {
             </Button>
           </Tooltip>
           <Tooltip content='Mi Carrito'>
-            <Button isIconOnly className='transition-all hover:animate-pulse bg-transparent text-blue-700' disableRipple>{icons.cart}
-            </Button>
+            <Link isIconOnly className='transition-all hover:animate-pulse bg-transparent text-blue-700' href='/cart'>{icons.cart}
+            </Link>
           </Tooltip>
         </div>
       </div>

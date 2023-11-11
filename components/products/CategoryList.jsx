@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function CategoryList( {categ} ) {
 
-  const filteredCategory = categories.find(e => e.short == categ);
+  const filteredCategory = categories.find(e => e.short === categ);
   return(
     <>
     <nav className='flex flex-row h-12 justify-start items-center p-4 gap-3 border-b-1 border-blue-300'>

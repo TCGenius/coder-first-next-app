@@ -9,10 +9,10 @@ products : products.filter(item => item.category === productCateg);
 
   return(
     
-    <div className='flex flex-row flex-wrap gap-6 md:ml-8 md:mr-auto m-auto my-4 md:justify-start justify-center bg-inherit h-full'>
+    <div className='flex flex-row flex-wrap gap-6  md:mx-auto m-auto my-4 md:justify-start justify-center bg-inherit h-full'>
       {filteredproducts.map(item => (
         <Link 
-        key={item.name} 
+        key={item.id} 
         href={`/detail/${item.name}`} >
           <ProductCard 
           productName={item.name} 
