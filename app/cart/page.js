@@ -21,9 +21,9 @@ export default function CartPage() {
                 <td><CartAdd agregar={0} cartValue={item.id}></CartAdd></td> {/*Aún no se agrega esta funcionalidad. Se usa la ID como una cantidad ficticia*/}
               </tr>
               ))}
-
         </tbody>
       </table>
+      <Button color='primary' className='m-auto'>Finalizar compra</Button>
     </div>
   )
 }

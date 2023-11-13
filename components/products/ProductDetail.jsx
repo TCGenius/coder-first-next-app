@@ -4,7 +4,7 @@ import CartAdd from '../utilities/CartAdd';
 
 export default function ProductDetail( { detail } ) {
 
-  const filteredItem = products.find(e => e.name == detail); 
+  const filteredItem = products.find(e => e.id == detail);  //De momento usamos id hasta que tenga base de datos.
 
   return (
     <div className='container flex flex-row md:flex-nowrap flex-wrap h-full rounded-lg gap-4 shadow-md shadow-blue-400 items-center p-4 justify-center bg-white'>

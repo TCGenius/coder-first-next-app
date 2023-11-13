@@ -15,11 +15,11 @@ const handleClose = () => {
 }
 
 const menuList = [{
-  name: 'Nosotros',
-  url: '/nosotros'
+  name: 'Nuestros productos',
+  url: '/products/all'
 }, {
   name: '',
-  url: '/nosotros'
+  url: '/products/'
 }, {
   name: 'Nosotros',
   url: '/nosotros'
@@ -38,7 +38,7 @@ const menuList = [{
             <Button onClick={handleClose} className='bg-transparent w-max text-black'>{icons.close}</Button>
           </div>
           <nav className='flex mt-4 flex-col gap-4 px-3 text-black'>
-            <Link href='/prueba' className='text-black ml-4'>Heladeras</Link>
+            <Link href='/products/all' className='text-black ml-4'>Nuestros productos</Link>
             <Link href='/prueba' className='text-black ml-4'>Lavarropas</Link>
             <Link href='/prueba' className='text-black ml-4'>Cocina</Link>
           </nav>

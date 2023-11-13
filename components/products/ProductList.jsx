@@ -13,7 +13,7 @@ products : products.filter(item => item.category === productCateg);
       {filteredproducts.map(item => (
         <Link 
         key={item.id} 
-        href={`/detail/${item.name}`} >
+        href={`/detail/${item.id}`} >
           <ProductCard 
           productName={item.name} 
           productImg={item.img} 

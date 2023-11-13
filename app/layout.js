@@ -3,12 +3,14 @@ import './globals.css'
 import { Providers } from './providers'
 import Header from '@/components/ui/Header'
 import Footer from '@/components/ui/Footer'
+import Message from '@/components/ui/Message'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Electrodomésticos Capellari',
   description: 'Electrodomésticos Capellari',
+
 }
 
 export default function RootLayout({ children }) {
@@ -18,6 +20,7 @@ export default function RootLayout({ children }) {
         <Providers> {/*Necesario para utilizar Next UI*/}
         <Header />
           {children}
+        <Message />
         <Footer />
         </Providers>
       
