@@ -8,7 +8,7 @@ export default function DetailPage( { params } ) {
   return (
     <div className='container h-full m-auto p-4 space-y-4'>
       <Back />
-      <ProductDetail detail={decodedId} />
+      <ProductDetail detail={id} />
       
     </div>
   )

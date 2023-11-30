@@ -1,23 +1,20 @@
 import Link from 'next/link'
 import ProductCard from './ProductCard'
-import products from '@/data/products';
 
-export default function ProductList({productCateg}) {
-  
-const filteredproducts = productCateg == 'all' ?
-products : products.filter(item => item.category === productCateg);
+export default async function ProductList({productCateg}) {
+  const data = await fetch(`http://localhost:3000/api/products/${productCateg}`, {cache: 'no-store'})
+  .then(r => r.json())
+
 
   return(
     
-    <div className='flex flex-row flex-wrap gap-6  md:mx-auto m-auto my-4 md:justify-start justify-center bg-inherit h-full'>
-      {filteredproducts.map(item => (
+    <div className='flex flex-row flex-wrap gap-6 md:mx-auto m-auto my-4 md:justify-start justify-center bg-inherit h-full'>
+      {data.map(item => (
         <Link 
         key={item.id} 
         href={`/detail/${item.id}`} >
           <ProductCard 
-          productName={item.name} 
-          productImg={item.img} 
-          productPrice={item.price}/>
+          product={item}/>
         </Link>
       )) }
     </div>

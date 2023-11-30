@@ -39,21 +39,21 @@ const products = [
     name: 'Microondas Bgh B120m20 Mecánico Quick Chef Blanco 20 Litros',
     img: '/img/Microondas Bgh B120m20 Mecánico Quick Chef Blanco 20 Litros.webp',
     category: 'microondas',
-    description: <p>Este microondas cuenta con un control mecánico que te permite seleccionar entre 6 niveles de potencia y el tiempo que necesites para preparar tus platos favoritos.<br /><br />Su rapidez e higiene superan los métodos tradicionales de cocción, permitiendo conservar las propiedades y sabores naturales de los alimentos.</p>,
+    description: <p>Este microondas cuenta con un control mecánico que te permite seleccionar entre 6 niveles de potencia y el tiempo que necesites para preparar tus platos favoritos. Su rapidez e higiene superan los métodos tradicionales de cocción, permitiendo conservar las propiedades y sabores naturales de los alimentos.</p>,
     price: 82999
   }, {
     id: 7,
     name: 'Microondas Grill Atma Easy Cook MD1723GN blanco 23L 220V',
     img: '/img/Microondas Grill Atma Easy Cook MD1723GN blanco 23L 220V.webp',
     category: 'microondas',
-    description: <p>¿Necesitás soluciones rápidas? Disfrutá de tus comidas favoritas en tan solo minutos con la línea Atma. Esta marca es sinónimo de tradición y confianza, reconocida por sus usuarios por sus productos funcionales y de diseño sumamente accesibles y masivos.<br /><br />El microondas se ha convertido en un artefacto imprescindible en nuestros hogares. Si todavía no elegiste alguno no dudes más. Con la línea Easy Cook tendrás todo lo que soñaste en un solo lugar. Simpleza, diseño, calidad y tecnología que te acompañará en tus almuerzos y cenas.</p>,
+    description: <p>¿Necesitás soluciones rápidas? Disfrutá de tus comidas favoritas en tan solo minutos con la línea Atma. Esta marca es sinónimo de tradición y confianza, reconocida por sus usuarios por sus productos funcionales y de diseño sumamente accesibles y masivos. El microondas se ha convertido en un artefacto imprescindible en nuestros hogares. Si todavía no elegiste alguno no dudes más. Con la línea Easy Cook tendrás todo lo que soñaste en un solo lugar. Simpleza, diseño, calidad y tecnología que te acompañará en tus almuerzos y cenas.</p>,
     price: 94129
   }, {
     id: 8,
     name: 'Microondas Atma Easy Cook MR1720NPI blanco 20L 220V',
     img: '/img/Microondas Atma Easy Cook MR1720NPI blanco 20L 220V.webp',
     category: 'microondas',
-    description: <p>¿Necesitás soluciones rápidas? Disfrutá de tus comidas favoritas en tan solo minutos con la línea Atma. Esta marca es sinónimo de tradición y confianza, reconocida por sus usuarios por sus productos funcionales y de diseño sumamente accesibles y masivos.<br /><br />El microondas se ha convertido en un artefacto imprescindible en nuestros hogares. Si todavía no elegiste alguno no dudes más. Con la línea Easy Cook tendrás todo lo que soñaste en un solo lugar. Simpleza, diseño, calidad y tecnología que te acompañará en tus almuerzos y cenas.</p>,
+    description: <p>¿Necesitás soluciones rápidas? Disfrutá de tus comidas favoritas en tan solo minutos con la línea Atma. Esta marca es sinónimo de tradición y confianza, reconocida por sus usuarios por sus productos funcionales y de diseño sumamente accesibles y masivos. El microondas se ha convertido en un artefacto imprescindible en nuestros hogares. Si todavía no elegiste alguno no dudes más. Con la línea Easy Cook tendrás todo lo que soñaste en un solo lugar. Simpleza, diseño, calidad y tecnología que te acompañará en tus almuerzos y cenas.</p>,
     price: 68299
   }, {
     id: 9,

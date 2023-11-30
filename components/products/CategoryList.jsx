@@ -1,5 +1,4 @@
 import categories from '@/data/categories'
-import { Tooltip } from '@nextui-org/react'
 import Link from 'next/link'
 
 

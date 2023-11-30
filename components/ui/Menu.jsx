@@ -1,6 +1,5 @@
 'use client'
 import { Button, Link } from '@nextui-org/react';
-import { Image } from '@nextui-org/react';
 import icons from '@/styles/icons';
 import { useState } from 'react';
 
