@@ -1,7 +1,7 @@
-import { Link } from '@nextui-org/react';
+import { Link, Tooltip } from '@nextui-org/react';
 import Menu from './Menu';
-import { Tooltip } from '@nextui-org/react';
-import icons from '@/styles/icons';
+import { user } from '@/styles/icons';
+import Cart from './Cart';
 
 export default function Header() {
   return(
@@ -13,13 +13,10 @@ export default function Header() {
         </div>
         <div className='flex flex-row items-center justify-center gap-4'>
           <Tooltip content='Iniciar Sesión'>
-            <Link className='transition-all hover:animate-pulse bg-transparent text-blue-700' href='/admin'>{icons.user}
+            <Link className='transition-all hover:animate-pulse bg-transparent text-blue-700' href='/admin'>{user}
             </Link>
           </Tooltip>
-          <Tooltip content='Mi Carrito'>
-            <Link className='transition-all hover:animate-pulse bg-transparent text-blue-700' href='/cart'>{icons.cart}
-            </Link>
-          </Tooltip>
+          <Cart />
         </div>
       </div>
       

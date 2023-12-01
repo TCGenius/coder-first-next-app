@@ -9,9 +9,10 @@ export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
 
     const addToCart = (product) => {
-        setCart([...cart, product])
+        let cartSpread = [...cart]
+        cartSpread.push.apply(cartSpread, product) //This way, we can push array items into another array
+        setCart(cartSpread)
     }
-    console.log(cart)
 
     return (
         <CartContext.Provider value={{

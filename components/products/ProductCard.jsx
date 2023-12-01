@@ -1,5 +1,6 @@
 import { Image } from '@nextui-org/react'
 
+
 export default function ProductCard({product}) {
   return(
     <article className='transition-all h-96 w-72 flex flex-col items-center justify-center gap-2 py-4 bg-white rounded-md hover:shadow-lg hover:shadow-blue-400'>
