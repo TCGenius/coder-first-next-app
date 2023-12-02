@@ -1,4 +1,5 @@
-import { Link, Tooltip } from '@nextui-org/react';
+import { Tooltip } from '@nextui-org/react';
+import Link from 'next/link';
 import Menu from './Menu';
 import { user } from '@/styles/icons';
 import Cart from './Cart';

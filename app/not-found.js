@@ -1,4 +1,4 @@
-import Back from '@/components/navigation/Back'
+import RouterButton from '@/components/navigation/RouterButton'
 import { Image } from '@nextui-org/react'
 export default function NotFound() {
   return (
@@ -8,7 +8,9 @@ export default function NotFound() {
         <Image src='/img/emptyfridge.png' alt='Caricatura de heladera vacía con teleraña dentro' width={300} className=''></Image>
         <div className='flex flex-col gap-4 items-center justify-center'>
           <h1 className='text-3xl font-bold'><span className='text-blue-700'>¡Ups! </span>Página no encontrada</h1>
-          <Back />
+          <RouterButton>
+            {'< Atrás'}
+          </RouterButton>
         </div>
       </div>
     </div>

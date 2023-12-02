@@ -14,10 +14,17 @@ export const CartProvider = ({children}) => {
         setCart(cartSpread)
     }
 
+    const removeFromCart = (product) => {
+        let cartSpread = [...cart]
+        cartSpread.splice(product, 1)
+        setCart(cartSpread)
+    }
+
     return (
         <CartContext.Provider value={{
             cart,
-            addToCart
+            addToCart,
+            removeFromCart
         }}>
             {children}
         </CartContext.Provider>

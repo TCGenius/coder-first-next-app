@@ -1,4 +1,4 @@
-import { Link } from '@nextui-org/react';
+import Link from 'next/link'
 
 export default function Home() {
 //Toda la página principal continúa en construcción. Solo se agrega un link a /products/all
