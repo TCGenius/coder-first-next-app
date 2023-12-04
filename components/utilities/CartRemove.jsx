@@ -7,7 +7,6 @@ export default function CartRemove(itemToRemove) {
   return(
     <Button isIconOnly color='danger' onClick={() => {
       removeFromCart(itemToRemove)
-      console.log(cart)
     }}>{trashCan}</Button>
   )
 }

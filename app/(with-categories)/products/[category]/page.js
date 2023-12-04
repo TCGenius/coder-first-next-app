@@ -1,5 +1,14 @@
 import ProductList from '@/components/products/ProductList'
-import CategoryList from '@/components/products/CategoryList'
+
+export async function generateStaticParams() {
+  return[
+    {category: 'all'},
+    {category: 'aires'},
+    {category: 'heladeras'},
+    {category: 'cocina'},
+    {category: 'microondas'}
+  ]
+}
 
 export default function ProductsPage({params}) {
 

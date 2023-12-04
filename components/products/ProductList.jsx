@@ -9,6 +9,7 @@ export default async function ProductList({productCateg}) {
   return(
     
     <div className='flex flex-row flex-wrap gap-6 md:mx-auto m-auto my-4 md:justify-start justify-center bg-inherit h-full'>
+      
       {data.map(item => (
         <Link 
         key={item.id} 

@@ -1,14 +1,25 @@
 'use client'
 import categories from '@/data/categories'
+import { back } from '@/styles/icons';
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
+import RouterButton from '../navigation/RouterButton';
 
 
 export default function CategoryList() {
   const pathname = usePathname()
   const pathnameControl = pathname.substring(0, 9) === '/products' ? pathname : '/products/all'
   const filteredCategory = categories.find(e => `/products/${e.short}` === pathnameControl);
-  return(
+  if(filteredCategory == undefined)
+   return (
+   <div className='flex flex-col h-full items-center justify-center w-full p-4 gap-4 m-4'>
+    <h1 className='text-xl font-bold'>¡Categoría inexistente!</h1>
+    <RouterButton>
+      {back} Atrás
+    </RouterButton>
+   </div>
+   )
+   return(
     <>
     <nav className='flex flex-row h-12 justify-start items-center p-4 gap-3 border-b-1 border-blue-300'>
       {categories.map(item => (

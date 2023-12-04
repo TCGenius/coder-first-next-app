@@ -8,9 +8,9 @@ export default function ProductCard({product}) {
         <Image alt={product.name} height={250} src={product.img} className='max-h-64 relative z-10' />
       </div>
       <div className='h-12'>
-        <h2 className='text-sm text-black px-4 w-72 productname overflow-hidden overflow-ellipsis'>{product.name}</h2>
+        <h2 className='text-sm text-black px-4 w-72 productname'>{product.name}</h2>
       </div>
-      <h2 className='text-lg text-black font-bold'>${product.price.toLocaleString()}</h2>
+      <h2 className='text-lg text-black font-bold'>${product.price.toLocaleString('es-AR')}</h2>
     </article>
   )
 }

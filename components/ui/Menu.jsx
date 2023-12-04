@@ -28,8 +28,8 @@ const handleClose = () => {
           </div>
           <nav className='flex mt-4 flex-col gap-4 px-3 text-black'>
             <Link href='/products/all' className='text-black ml-4'>Nuestros productos</Link>
-            <Link href='/prueba' className='text-black ml-4'>Nosotros</Link>
-            <Link href='/prueba' className='text-black ml-4'>Contacto</Link>
+            <Link href='/nosotros' className='text-black ml-4'>Nosotros</Link>
+            <Link href='/contacto' className='text-black ml-4'>Contacto</Link>
           </nav>
         </aside>
       </div>

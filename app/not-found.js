@@ -1,4 +1,5 @@
 import RouterButton from '@/components/navigation/RouterButton'
+import { back } from '@/styles/icons'
 import { Image } from '@nextui-org/react'
 export default function NotFound() {
   return (
@@ -9,7 +10,7 @@ export default function NotFound() {
         <div className='flex flex-col gap-4 items-center justify-center'>
           <h1 className='text-3xl font-bold'><span className='text-blue-700'>¡Ups! </span>Página no encontrada</h1>
           <RouterButton>
-            {'< Atrás'}
+            {back} Atrás
           </RouterButton>
         </div>
       </div>

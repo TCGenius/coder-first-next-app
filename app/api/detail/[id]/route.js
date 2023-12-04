@@ -7,6 +7,6 @@ export async function GET (_, { params }) {
   const docRef = doc(db, 'products', id) //get specific product from Firebase
   const docSnapshot = await getDoc(docRef) //get record as an object
   
-  return NextResponse.json(docSnapshot.data()) //return the response as json
+  return NextResponse.json(docSnapshot.data() == undefined ? {} : docSnapshot.data()) //return the response as json (if any)
  
 }

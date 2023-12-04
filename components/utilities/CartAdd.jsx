@@ -3,16 +3,15 @@ import { Button } from '@nextui-org/react'
 import { useState } from 'react'
 import { useCartContext } from '@/contexts/CartContext'
 
-export default function CartAdd ({ agregar, product }) {
+export default function CartAdd ({ product }) {
   const { addToCart } = useCartContext()
   
-  const [item, setItem] = useState([])
+  const [item, setItem] = useState([product])
 
   const popItem = () => {
     let itemArray = [...item]
     itemArray.pop();
     setItem(itemArray)
-    console.log(item)
   } //We take out the last item from the array
 
   const toCart = (qty) => {
@@ -28,7 +27,7 @@ export default function CartAdd ({ agregar, product }) {
         {item.length}
         <Button onClick={() => toCart(1)} isIconOnly color='primary'>+</Button>
       </div>
-      <Button color='primary' className={`${agregar == 1 ? 'visible' : 'hidden'} `} 
+      <Button color='primary' 
       onClick={() => {
         addToCart(item)
         setItem([])

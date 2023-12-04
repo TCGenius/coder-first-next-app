@@ -1,10 +1,14 @@
 import ProductDetail from '@/components/products/ProductDetail';
+import { Spinner } from '@nextui-org/react';
+import { Suspense } from 'react';
 
 export default function DetailPage( { params } ) {
   const { id } = params
   return (
     <div className='container h-full m-auto p-4 space-y-4'>
-      <ProductDetail detail={id} />
+      <Suspense fallback={<Spinner className='h-64 w-64' label='Aguarde un momento...'></Spinner>}>
+        <ProductDetail detail={id} />
+      </Suspense>
     </div>
   )
 }
