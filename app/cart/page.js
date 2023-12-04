@@ -8,7 +8,7 @@ import { Input } from '@nextui-org/react'
 import { creditCard } from '@/styles/icons'
 
 export default function CartPage() {
-  const { addToCart, cart } = useCartContext()
+  const { clearCart, cart } = useCartContext()
   const totalPrice = cart.reduce ((acc, obj) => {
     return acc + obj.price
   }, 0)
@@ -45,6 +45,7 @@ export default function CartPage() {
               </div>
               </ScrollShadow>
             <h2 className='text-lg'>Total: <strong>${totalPrice.toLocaleString('es-AR')}</strong></h2>
+            <Button onClick={() => clearCart() } color='primary'>Vaciar carrito</Button>
           </div>
           <div className='md:basis-2/5 w-full'>
             <form className='flex flex-col gap-3 items-center justify-center w-full'>

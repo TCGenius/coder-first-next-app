@@ -16,15 +16,20 @@ export const CartProvider = ({children}) => {
 
     const removeFromCart = (product) => {
         let cartSpread = [...cart]
-        cartSpread.splice(product, 1)
+        cartSpread.splice(product, 1) //The product param is the index of the item
         setCart(cartSpread)
+    }
+
+    const clearCart = () => {
+        setCart([])
     }
 
     return (
         <CartContext.Provider value={{
             cart,
             addToCart,
-            removeFromCart
+            removeFromCart,
+            clearCart
         }}>
             {children}
         </CartContext.Provider>
