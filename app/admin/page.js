@@ -11,7 +11,7 @@ export default function AdminPage() {
       description: 'Configure sus categorías'
     }, {
       name: 'Productos',
-      url: '/admin/products',
+      url: '/admin/products/all',
       icon: box,
       description: 'Cree, modifique y elimine productos'
     }, {

@@ -11,6 +11,15 @@
   /*Necesario para acortar el nombre del producto en 2 líneas*/
 }
 
+.adminProductName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 1
+  /*Necesario para acortar el nombre del producto en 1 línea*/
+}
+
 .description {
   text-wrap: pretty
   /*Balancea un poco mejor la descripción del ítem*/

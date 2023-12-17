@@ -2,8 +2,6 @@ import { NextResponse } from 'next/server';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '@/firebase/firebase.config';
 
-
-
 export async function GET (_, { params }) {
   const { category } = params //get category from params
   const productsRef = collection(db, 'products') //get 'products' collection from Firebase
