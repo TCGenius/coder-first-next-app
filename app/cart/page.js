@@ -34,7 +34,7 @@ export default function CartPage() {
                         <tr key={index} className='transition-all h-32 border-1 border-blue-400 rounded-lg my-4 flex items-center justify-between p-4 bg-white hover:bg-blue-100'>
                           <td className='w-32'><Image src={item.img} alt={item.name} className='max-h-24' height={100}></Image></td>
                           <td className='p-4 w-full flex flex-col items-center gap-2'>
-                            <Link href={`/detail/${item.id}`}><p className='productname'>{item.name}</p></Link>
+                            <Link href={`/detail/${item.slug}`}><p className='productname'>{item.name}</p></Link>
                             <p className='text-md font-bold'>${item.price.toLocaleString('es-AR')}</p>
                           </td>
                           <td><CartRemove itemToRemove={index} /></td>

@@ -9,7 +9,7 @@ export default async function AdminProductList ( {productCateg} ) {
     <div className='container flex flex-col gap-2 p-4 m-auto'>
       {data.map(item => (
           <AdminProductItem 
-          key={item.id}
+          key={item.slug}
           product={item}/>
       ))}
     </div>

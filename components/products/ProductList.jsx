@@ -12,8 +12,8 @@ export default async function ProductList({productCateg}) {
       
       {data.map(item => (
         <Link 
-        key={item.id} 
-        href={`/detail/${item.id}`} >
+        key={item.slug} 
+        href={`/detail/${item.slug}`} >
           <ProductCard 
           product={item}/>
         </Link>

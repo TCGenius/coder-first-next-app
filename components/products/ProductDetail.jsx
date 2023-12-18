@@ -6,7 +6,7 @@ export default async function ProductDetail( { detail } ) {
   const data = await fetch(`http://localhost:3000/api/detail/${detail}`, {cache: 'no-store'})
   .then(r => r.json()) //fetch single product from API
 
-  if (!data.id){
+  if (!data.slug){
    notFound() //Routes into not-found.js if not data is returned
   }
   return (
