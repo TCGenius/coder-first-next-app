@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { Button, Select, SelectItem } from '@nextui-org/react'
+import { Button } from '@nextui-org/react'
 import { doc, setDoc } from 'firebase/firestore'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { db, storage } from '@/firebase/firebase.config'
@@ -17,8 +17,10 @@ const createProduct = async (values, file) => {
   const docRef = doc(db, 'products', values.slug)
   return setDoc(docRef, {
       ...values,
-      image: fileURL //We assign the image URL to the object in the database
-  }).then(() => console.log('Producto creado exitosamente'))
+      img: fileURL //We assign the image URL to the object in the database
+  }).then(() => {
+    alert('Producto creado exitosamente')
+  })
 }
 
 export default function AdminProductCreate() {
@@ -42,6 +44,14 @@ export default function AdminProductCreate() {
   const handleSubmit = async (e) => {
       e.preventDefault()
       await createProduct(values, file)
+      setValues({ 
+        name: '', 
+        description: '', 
+        stock: 0,
+        price: 0, 
+        category: '', 
+        slug: ''
+    })
   } //Handler for submit
 
   return (
@@ -95,22 +105,20 @@ export default function AdminProductCreate() {
                   onChange={handleChange}
               />
 
-              <label>Categoria: </label>
+              <label>Categoría: </label>
               
-              <Select
-                  type='text'
-                  value={values.category}
-                  required
-                  className='p-2 rounded w-full border border-blue-100 block my-4'
-                  name='category'
-                  onChange={handleChange}
+              <select
+              className='p-2 rounded w-full border border-blue-100 block my-4'
+              required
+              name='category'
+              onChange={handleChange}
               >
               {categoriesSpread.map((category) => (
-                <SelectItem key={category.short} value={category.short}>
-                  {category.name}
-                </SelectItem>
+                <option key={category.short} value={category.short}>
+                    {category.name}
+                </option>
               ))}
-              </Select>
+              </select>
 
               <label>Descripción: </label>
               <textarea

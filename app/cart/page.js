@@ -10,7 +10,7 @@ import { creditCard } from '@/styles/icons'
 export default function CartPage() {
   const { clearCart, cart } = useCartContext()
   const totalPrice = cart.reduce ((acc, obj) => {
-    return acc + obj.price
+    return acc + Number(obj.price)
   }, 0)
 
   return(
@@ -35,9 +35,9 @@ export default function CartPage() {
                           <td className='w-32'><Image src={item.img} alt={item.name} className='max-h-24' height={100}></Image></td>
                           <td className='p-4 w-full flex flex-col items-center gap-2'>
                             <Link href={`/detail/${item.slug}`}><p className='productname'>{item.name}</p></Link>
-                            <p className='text-md font-bold'>${item.price.toLocaleString('es-AR')}</p>
+                            <p className='text-md font-bold'>${Number(item.price).toLocaleString('es-AR')}</p>
                           </td>
-                          <td><CartRemove itemToRemove={index} /></td>
+                          <td><CartRemove itemToRemove={index}/></td>
                         </tr>
                         ))}
                   </tbody>

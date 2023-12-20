@@ -1,0 +1,28 @@
+'use client'
+import { Image } from '@nextui-org/react';
+import { useState } from 'react';
+
+
+export default function AdminProductEdit( { itemToEdit } ) {
+
+  const [values, setValues] = useState(itemToEdit) //State of the form values
+  const [file, setFile] = useState(null) //State of the file to upload
+
+  const handleChange = (e) => {
+      setValues({
+          ...values,
+          [e.target.name]: e.target.value
+      })
+  } //Handler for every field on change
+  return (
+    <div className='container flex flex-row md:flex-nowrap flex-wrap h-full rounded-lg gap-4 shadow-md shadow-blue-400 items-center p-4 justify-center bg-white'>
+      <div className='flex justify-center md:basis-3/5 basis-full '>
+        <Image src={itemToEdit.img} height={250} alt={itemToEdit.name} className='max-h-72' />
+      </div>
+      <div className='flex flex-col items-center md:basis-2/5 basis-full justify-center px-8 py-6 gap-4 border border-blue-200 rounded-md'>
+        <input type='text' name='name' className='m-auto text-xl font-bold text-justify border-b-1 border-blue-200 pb-2' value={itemToEdit.name} />
+        <input type='textarea' name='description' className='text-xs text-gray-700 border-b-1 border-blue-200 pb-2 description' value={itemToEdit.description} />
+      </div>
+    </div>
+  )
+}

@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import AdminProductItem from './adminProductItem'
 
 export default async function AdminProductList ( {productCateg} ) {

@@ -10,7 +10,7 @@ export default function ProductCard({product}) {
       <div className='h-12'>
         <h2 className='text-sm text-black px-4 w-72 productname'>{product.name}</h2>
       </div>
-      <h2 className='text-lg text-black font-bold'>${product.price.toLocaleString('es-AR')}</h2>
+      <h2 className='text-lg text-black font-bold'>${Number(product.price).toLocaleString('es-AR')}</h2>
     </article>
   )
 }
