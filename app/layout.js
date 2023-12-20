@@ -5,6 +5,7 @@ import Header from '@/components/ui/Header'
 import Footer from '@/components/ui/Footer'
 import Message from '@/components/ui/Message'
 import { CartProvider } from '@/contexts/CartContext'
+import { AuthProvider } from '@/contexts/AuthContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,14 +20,15 @@ export default function RootLayout({ children }) {
     <html lang="en" className='bg-gray-200'>
       <body className={inter.className}>
         <Providers> {/*Necesario para utilizar Next UI*/}
-          <CartProvider>
-            <Header />
-              {children}
-          </CartProvider>
-          <Message />
-          <Footer />
+          <AuthProvider>
+            <CartProvider>
+              <Header />
+                {children}
+            </CartProvider>
+            <Message />
+            <Footer />
+          </AuthProvider>
         </Providers>
-      
       </body>
     </html>
   )

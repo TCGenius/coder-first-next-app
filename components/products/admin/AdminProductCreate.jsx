@@ -120,7 +120,7 @@ export default function AdminProductCreate() {
                     )
                 }
                 }>
-                {categories.map((category) => (
+                {categoriesSpread.map((category) => (
                   <AutocompleteItem key={category.short} value={category.short} name='category'>
                     {category.name}
                   </AutocompleteItem>
@@ -134,7 +134,7 @@ export default function AdminProductCreate() {
               onChange={handleChange}
               />
 
-              <Button type='submit' color='primary'>Enviar</Button>
+              <Button type='submit' color='primary'>Crear producto</Button>
           </form>
       </div>
   )

@@ -1,6 +1,9 @@
+'use client'
+import { useAuthContext } from '@/contexts/AuthContext'
+
 export default function AdminLayout({ children, login }) {
-  const isLoggedIn = true
+  const { user } = useAuthContext()
   return(
-    isLoggedIn ? children : login
+    user.logged ? children : login
   )
 }

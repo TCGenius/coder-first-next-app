@@ -1,5 +1,5 @@
 import AdminRemove from '@/components/utilities/AdminRemove'
-import { pencil, trashCan } from '@/styles/icons'
+import { pencil } from '@/styles/icons'
 import { Button, Image, Tooltip } from '@nextui-org/react'
 import Link from 'next/link'
 

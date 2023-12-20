@@ -1,6 +1,7 @@
 import AdminCard from '@/components/admin/adminCard'
 import { settings, tag, box } from '@/styles/icons'
-import { Tooltip, Link } from '@nextui-org/react'
+import { Tooltip } from '@nextui-org/react'
+import Link from 'next/link'
 export default function AdminPage() {
 
   const adminOptions = [
