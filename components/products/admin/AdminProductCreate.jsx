@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { Button } from '@nextui-org/react'
+import { Autocomplete, AutocompleteItem, Button, Input, Textarea } from '@nextui-org/react'
 import { doc, setDoc } from 'firebase/firestore'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { db, storage } from '@/firebase/firebase.config'
@@ -55,80 +55,86 @@ export default function AdminProductCreate() {
   } //Handler for submit
 
   return (
-      <div className='container m-auto mt-6 max-w-lg'>
-          <form onSubmit={handleSubmit} className='my-12'>
-              <label>slug: </label>
-              <input
-                  type='text'
-                  value={values.slug}
-                  required
-                  className='p-2 rounded w-full border border-blue-100 block my-4'
-                  name='slug'
-                  onChange={handleChange}
-              />
-
-              <label>Imagen: </label>
-              <input
-                  type='file'
-                  required
-                  onChange={(e) => setFile(e.target.files[0])}
-                  className='p-2 rounded w-full border border-blue-100 block my-4'
-              />
-
-              <label>Nombre: </label>
-              <input
-                  type='text'
-                  value={values.name}
-                  required
-                  className='p-2 rounded w-full border border-blue-100 block my-4'
-                  name='name'
-                  onChange={handleChange}
-              />
-
-              <label>Precio: </label>
-              <input
-                  type='number'
-                  value={values.price}
-                  required
-                  className='p-2 rounded w-full border border-blue-100 block my-4'
-                  name='price'
-                  onChange={handleChange}
-              />
-
-              <label>Stock: </label>
-              <input
-                  type='number'
-                  value={values.stock}
-                  required
-                  className='p-2 rounded w-full border border-blue-100 block my-4'
-                  name='stock'
-                  onChange={handleChange}
-              />
-
-              <label>Categoría: </label>
-              
-              <select
-              className='p-2 rounded w-full border border-blue-100 block my-4'
+      <div className='container m-auto max-w-lg'>
+        <h1 className='text-2xl font-bold'><span className='text-blue-700'>C</span>rear nuevo producto</h1>
+          <form onSubmit={handleSubmit} className='p-4 flex flex-col gap-4 bg-white rounded-lg shadow-blue-400 my-4 '>
+              <Input
+              label='slug'
+              description='Código descriptivo único para el producto'
+              type='text'
+              value={values.slug}
               required
-              name='category'
+              className='w-full'
+              name='slug'
               onChange={handleChange}
-              >
-              {categoriesSpread.map((category) => (
-                <option key={category.short} value={category.short}>
-                    {category.name}
-                </option>
-              ))}
-              </select>
-
-              <label>Descripción: </label>
-              <textarea
-                  value={values.description}
-                  className='resize-none w-full h-24 p-2 rounded border block border-blue-100 my-4'
-                  name='description'
-                  onChange={handleChange}
               />
 
-              <Button type='submit'>Enviar</Button>
+              <label>Imagen</label>
+              <input
+              type='file'
+              required
+              onChange={(e) => setFile(e.target.files[0])}
+              className='w-full'
+              />
+              <Input
+              label='Nombre'
+              type='text'
+              value={values.name}
+              required
+              className='w-full'
+              name='name'
+              onChange={handleChange}
+              />
+
+              <Input
+              label='Precio'
+              startContent='$'
+              type='number'
+              value={values.price}
+              required
+              className='w-full'
+              name='price'
+              onChange={handleChange}
+              />
+
+              <Input
+              label='Stock'
+              type='number'
+              required
+              className='w-full'
+              name='stock'
+              onChange={handleChange}
+              />
+              
+              <Autocomplete
+              label='Categoría'
+              name='category'
+              required
+              className='w-full'
+              onSelectionChange={
+              (value) => {
+                    setValues({
+                    ...values,
+                    category: value
+                    }
+                    )
+                }
+                }>
+                {categories.map((category) => (
+                  <AutocompleteItem key={category.short} value={category.short} name='category'>
+                    {category.name}
+                  </AutocompleteItem>
+          ))}
+        </Autocomplete>
+              <Textarea
+              label='Descripción'
+              value={values.description}
+              className='w-full'
+              name='description'
+              onChange={handleChange}
+              />
+
+              <Button type='submit' color='primary'>Enviar</Button>
           </form>
       </div>
   )

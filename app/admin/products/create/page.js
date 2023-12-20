@@ -7,7 +7,7 @@ export default function CreatePage() {
       <div className='container m-auto p-4'>
         <RouterButton
         navigateTo={'/admin/products/main/all'}>
-          Volver a edición
+          Volver
         </RouterButton>
       </div>
     <AdminProductCreate />

@@ -12,9 +12,11 @@ export default function AdminProductItem({product}) {
         <span className='text-md font-bold adminProductName'>{product.name}</span>
       </Link>
       <div className='flex justify-center items-center gap-2'>
-        <Tooltip content='Editar' shadow='md'>
-          <Button isIconOnly color='secondary'>{pencil}</Button>
-        </Tooltip>
+        <Link href={`/admin/products/edit/${product.slug}`}>
+          <Tooltip content='Editar' shadow='md'>
+              <Button isIconOnly color='secondary'>{pencil}</Button>
+          </Tooltip>
+        </Link>
         <Tooltip content='Eliminar' shadow='lg'>
           <Button isIconOnly color='danger'>{trashCan}</Button>
         </Tooltip>
