@@ -1,3 +1,4 @@
+import AdminRemove from '@/components/utilities/AdminRemove'
 import { pencil, trashCan } from '@/styles/icons'
 import { Button, Image, Tooltip } from '@nextui-org/react'
 import Link from 'next/link'
@@ -17,9 +18,7 @@ export default function AdminProductItem({product}) {
               <Button isIconOnly color='secondary'>{pencil}</Button>
           </Tooltip>
         </Link>
-        <Tooltip content='Eliminar' shadow='lg'>
-          <Button isIconOnly color='danger'>{trashCan}</Button>
-        </Tooltip>
+        <AdminRemove itemToRemove={product.slug} />
       </div>
     </div>
   )
