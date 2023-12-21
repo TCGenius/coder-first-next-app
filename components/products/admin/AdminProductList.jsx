@@ -1,7 +1,7 @@
 import AdminProductItem from './AdminProductItem'
 
 export default async function AdminProductList ( {productCateg} ) {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${productCateg}`, {cache: 'no-store'})
+  const data = await fetch(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${productCateg}`, {cache: 'no-store'})
   .then(r => r.json()) //fetch items filtered by category from API
 
   return(

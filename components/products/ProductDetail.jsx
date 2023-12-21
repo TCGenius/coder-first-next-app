@@ -3,7 +3,7 @@ import CartAdd from '../utilities/CartAdd';
 import { notFound } from 'next/navigation';
 
 export default async function ProductDetail( { detail } ) {
-  const data = await fetch(`http://localhost:3000/api/detail/${detail}`, {cache: 'no-store'})
+  const data = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/detail/${detail}`, {cache: 'no-store'})
   .then(r => r.json()) //fetch single product from API
 
   if (!data.slug){
