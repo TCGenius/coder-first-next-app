@@ -4,7 +4,7 @@ import ProductCard from './ProductCard'
 //I'm not using static params because it doesn't read new products
 export default async function ProductList({productCateg}) {
   
-    const data = await fetch(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${productCateg}`, {cache: 'no-store'})
+    const data = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${productCateg}`, {cache: 'no-store'})
     .then(r => r.json())
     .catch(error => console.log(error)) //fetch items filtered by category from API
 

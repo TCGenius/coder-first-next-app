@@ -3,7 +3,7 @@ import AdminProductEdit from '@/components/products/admin/AdminProductEdit'
 
 export default async function AdminItemEdit( {params} ) {
   const { slug } = params
-  const data = await fetch(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/detail/${slug}`, {cache: 'no-store'})
+  const data = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/detail/${slug}`, {cache: 'no-store'})
   .then(r => r.json()) //fetch single product from API
 
   if (!data.slug){
