@@ -1,12 +1,21 @@
 import Link from 'next/link'
 import ProductCard from './ProductCard'
+import { db } from '@/firebase/firebase.config'
+import { collection, where, query, getDocs } from 'firebase/firestore'
 
 //I'm not using static params because it doesn't read new products
 export default async function ProductList({productCateg}) {
   
-    const data = await fetch(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${productCateg}`, {cache: 'no-store'})
-    .then(r => r.json())
-    .catch(error => console.log(error)) //fetch items filtered by category from API
+    // const data = await fetch(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${productCateg}`, {cache: 'no-store'})
+    // .then(r => r.json())
+    // .catch(error => console.log(error)) //fetch items filtered by category from API
+    const { category } = params //get category from params
+    const productsRef = collection(db, 'products') //get 'products' collection from Firebase
+    const q = category === 'all' 
+    ? productsRef 
+    : query(productsRef, where('category', '==', category)) //filter products by category
+    const querySnapshot = await getDocs(q) //get every record in the query
+    const data = querySnapshot.docs.map(doc => doc.data()) //get every field as an array of objects
 
 
   return(
