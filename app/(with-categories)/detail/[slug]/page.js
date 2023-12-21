@@ -1,6 +1,5 @@
 import RouterButton from '@/components/navigation/RouterButton';
 import ProductDetail from '@/components/products/ProductDetail';
-import { back } from '@/styles/icons';
 import { Spinner } from '@nextui-org/react';
 import { Suspense } from 'react';
 

@@ -1,7 +1,4 @@
-import Link from 'next/link';
-import Menu from './Menu';
 import Image from 'next/image';
-import icons from '@/styles/icons';
 
 export default function Footer() {
   return(

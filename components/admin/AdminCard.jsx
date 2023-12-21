@@ -1,4 +1,3 @@
-import { Link, Tooltip } from '@nextui-org/react'
 export default function AdminCard({optionLabel, optionIcon}) {
   return(
     <article className='transition-all flex flex-col items-center justify-center gap-6 p-4 hover:shadow-lg hover:shadow-blue-400 h-80 w-96 bg-white rounded-md'>

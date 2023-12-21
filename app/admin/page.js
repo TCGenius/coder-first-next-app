@@ -1,4 +1,4 @@
-import AdminCard from '@/components/admin/adminCard'
+import AdminCard from '@/components/admin/AdminCard'
 import { settings, tag, box } from '@/styles/icons'
 import { Tooltip } from '@nextui-org/react'
 import Link from 'next/link'

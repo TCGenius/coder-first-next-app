@@ -1,5 +1,5 @@
 import RouterButton from '@/components/navigation/RouterButton';
-import AdminProductList from '@/components/products/admin/adminProductList';
+import AdminProductList from '@/components/products/admin/AdminProductList';
 
 export default function AdminProductsPage( { params } ) {
   const { category } = params
