@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import ProductCard from './ProductCard'
 
+//I'm not using static params because it doesn't read new products
 export default async function ProductList({productCateg}) {
   
-  const data = await fetch(`http://localhost:3000/api/products/${productCateg}`, {cache: 'no-store'})
-  .then(r => r.json())
-  .catch(error => console.log(error)) //fetch items filtered by category from API
+    const data = await fetch(`http://localhost:3000/api/products/${productCateg}`, {cache: 'no-store'})
+    .then(r => r.json())
+    .catch(error => console.log(error)) //fetch items filtered by category from API
+
 
   return(
     
