@@ -2,8 +2,10 @@ import Link from 'next/link'
 import ProductCard from './ProductCard'
 
 export default async function ProductList({productCateg}) {
+  
   const data = await fetch(`http://localhost:3000/api/products/${productCateg}`, {cache: 'no-store'})
-  .then(r => r.json()) //fetch items filtered by category from API
+  .then(r => r.json())
+  .catch(error => console.log(error)) //fetch items filtered by category from API
 
   return(
     
