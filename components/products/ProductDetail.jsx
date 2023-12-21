@@ -10,7 +10,8 @@ export default async function ProductDetail( { detail } ) {
   //Commented fetch because it doesn't work on Vercel
 
   const docRef = doc(db, 'products', detail) //get specific product from Firebase
-  const data = await getDoc(docRef) //get record as an object
+  const docSnapshot = await getDoc(docRef) //get record as an object
+  const data = docSnapshot.data()
 
   if (!data.slug){
    notFound() //Routes into not-found.js if not data is returned
