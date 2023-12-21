@@ -1,12 +1,15 @@
 'use client'
-import { Tooltip, Chip } from '@nextui-org/react'
+import { Tooltip, Chip, Button } from '@nextui-org/react'
 import Link from 'next/link'
 import { useCartContext } from '@/contexts/CartContext'
-import { cartIcon } from '@/styles/icons'
+import { useAuthContext } from '@/contexts/AuthContext'
+import { cartIcon, signout } from '@/styles/icons'
 
 export default function Cart(){
   const { cart } = useCartContext()
+  const { user, logout } = useAuthContext()
 
+  if (!user.logged) {
   return(
     <>
     <Tooltip content='Mi Carrito'>
@@ -16,5 +19,19 @@ export default function Cart(){
       </Link>
     </Tooltip>
     </>
+  )
+  }
+  return(
+    <Tooltip
+      showArrow={true} 
+      content='Cerrar Sesión'>
+        <Button
+        onClick={logout}
+        color='danger'
+        className='rounded-full p-1'
+        isIconOnly>
+          {signout}
+        </Button>
+      </Tooltip>
   )
 }

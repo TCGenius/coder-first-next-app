@@ -76,6 +76,7 @@ export default function AdminProductEdit( { itemToEdit } ) {
         label='Categoría'
         color='primary'
         name='category'
+        selectedKey={values.category} //This way, the 
         onSelectionChange={
           (value) => {
             setEnableButton(true)
@@ -87,7 +88,10 @@ export default function AdminProductEdit( { itemToEdit } ) {
           }
         }>
           {categoriesSpread.map((category) => (
-            <AutocompleteItem key={category.short} value={category.short} name='category'>
+            <AutocompleteItem 
+            key={category.short} 
+            value={category.short} 
+            name='category'>
               {category.name}
             </AutocompleteItem>
           ))}

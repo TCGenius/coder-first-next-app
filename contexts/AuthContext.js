@@ -1,6 +1,6 @@
 'use client'
 import { auth } from '@/firebase/firebase.config'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'
 import { createContext, useContext, useEffect, useState } from 'react'
 
 
@@ -25,6 +25,10 @@ const loginUser = async (values) => {
   .catch(error => alert(`No se pudo iniciar sesión por el error: ${error.message}`))
 }
 
+const logout = () => {
+  signOut(auth)
+}
+
 useEffect(() => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -45,7 +49,8 @@ useEffect(() => {
     <AuthContext.Provider value={{
       user,
       createUser,
-      loginUser
+      loginUser,
+      logout
     }}>
       {children}
     </AuthContext.Provider>

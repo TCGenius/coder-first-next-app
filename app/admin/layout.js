@@ -1,9 +1,16 @@
 'use client'
 import { useAuthContext } from '@/contexts/AuthContext'
+import { Button, Tooltip } from '@nextui-org/react'
+import { signout } from '@/styles/icons'
 
 export default function AdminLayout({ children, login }) {
-  const { user } = useAuthContext()
+  const { user, logout } = useAuthContext()
+  if (user.logged){
   return(
-    user.logged ? children : login
+      children
+  )
+  }
+  return(
+    login
   )
 }
