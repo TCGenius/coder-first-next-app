@@ -1,10 +1,16 @@
 import { Image } from '@nextui-org/react';
 import CartAdd from '../utilities/CartAdd';
 import { notFound } from 'next/navigation';
+import { getDoc, doc } from 'firebase/firestore'
+import { db } from '@/firebase/firebase.config'
 
 export default async function ProductDetail( { detail } ) {
-  const data = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/detail/${detail}`, {cache: 'no-store'})
-  .then(r => r.json()) //fetch single product from API
+  // const data = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/detail/${detail}`, {cache: 'no-store'})
+  // .then(r => r.json()) //fetch single product from API
+  //Commented fetch because it doesn't work on Vercel
+
+  const docRef = doc(db, 'products', detail) //get specific product from Firebase
+  const data = await getDoc(docRef) //get record as an object
 
   if (!data.slug){
    notFound() //Routes into not-found.js if not data is returned

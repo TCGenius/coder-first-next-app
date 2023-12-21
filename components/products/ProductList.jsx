@@ -9,6 +9,7 @@ export default async function ProductList({productCateg}) {
     // const data = await fetch(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${productCateg}`, {cache: 'no-store'})
     // .then(r => r.json())
     // .catch(error => console.log(error)) //fetch items filtered by category from API
+    //Commented fetch because it doesn't work on Vercel
     const productsRef = collection(db, 'products') //get 'products' collection from Firebase
     const q = productCateg === 'all' 
     ? productsRef 
