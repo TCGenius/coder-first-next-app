@@ -1,4 +1,4 @@
-import AdminProductItem from './adminProductItem'
+import AdminProductItem from './AdminProductItem'
 
 export default async function AdminProductList ( {productCateg} ) {
   const data = await fetch(`http://localhost:3000/api/products/${productCateg}`, {cache: 'no-store'})
