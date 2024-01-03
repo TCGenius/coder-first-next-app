@@ -12,7 +12,7 @@ export default function DetailPage( { params } ) {
         navigateTo={'/products/all'}>
           Seguir comprando
         </RouterButton>
-        <ProductDetail detail={slug} />
+        <ProductDetail detail={decodeURI(slug)} /*Usamos decodeURI para que pase el slug correctamente desde la URL*//>
       </Suspense>
     </div>
   )

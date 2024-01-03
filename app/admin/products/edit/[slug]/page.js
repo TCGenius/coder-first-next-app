@@ -5,11 +5,12 @@ import { db } from '@/firebase/firebase.config'
 
 export default async function AdminItemEdit( {params} ) {
   const { slug } = params
+  const decodedSlug = decodeURI(slug) //Decode de slug to get it complete from URL
   // const data = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/detail/${slug}`, {cache: 'no-store'})
   // .then(r => r.json()) //fetch single product from API
   //Commented fetch because it doesn't work on Vercel
 
-  const docRef = doc(db, 'products', slug) //get specific product from Firebase
+  const docRef = doc(db, 'products', decodedSlug) //get specific product from Firebase
   const docSnapshot = await getDoc(docRef) //get record as an object
   const data = docSnapshot.data()
 
